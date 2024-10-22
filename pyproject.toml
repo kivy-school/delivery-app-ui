@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "delivery-app-ui"
+version = "0.1.0"
+description = ""
+authors = ["Kivy School"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+kivy-reloader = "^0.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
