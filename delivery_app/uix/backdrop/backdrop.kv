@@ -1,0 +1,81 @@
+#:import ButtonPrimary delivery_app.uix.button.button_primary.ButtonPrimary
+#:import ButtonText delivery_app.uix.button.button_text.ButtonText
+
+<Backdrop>:
+    size_hint: 1, None
+    height: dp(584)
+    padding: 0, dp(64), 0, dp(54)
+    orientation: 'vertical'
+
+    canvas.before:
+        Color:
+            rgba: background
+        SmoothRoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [dp(30), dp(30), 0, 0] # top-left, top-right, br, bl
+
+    Icon:
+        pos_hint: {'center_x': 0.5}
+
+    Label:
+        text: 'Non-Contact\nDeliveries'
+        color: text_primary
+        font_size: dp(34)
+        font_name: sf_display_bold
+        halign: 'center'
+        size_hint: None, None
+        size: dp(326), dp(128)
+        pos_hint: {'center_x': .5}
+        padding: 0, dp(24), 0, dp(24)
+
+    Label:
+        text: 'When placing an order, select the option\n“Contactless delivery” and the courier will leave\nyour order at the door.'
+        color: text_secondary
+        size_hint: None, None
+        size: dp(374), dp(127)
+        halign: 'center'
+        font_size: dp(17)
+        font_name: sf_text_regular
+        pos_hint: {'center_x': .5}
+        line_height: 21/17
+        padding: 0, 0, 0, dp(48)
+
+    ButtonPrimary:
+        text: 'ORDER NOW'
+        font_name: sf_text_semibold
+        font_size: dp(15)
+        color: white
+        size_hint_x: None
+        width: root.width - dp(40)
+        pos_hint: {'center_x': .5}
+        bg_color: primary_button
+        bg_color_down: rgba("#09A569")
+        radius: [dp(8)]
+
+    ButtonText:
+        text: 'DISMISS'
+        color_normal: text_secondary
+        color_down: black
+        font_name: sf_text_semibold
+        font_size: dp(15)
+        size_hint_y: None
+        height: dp(51)
+        pos_hint: {'center_x': .5}
+        padding: 0, dp(33), 0, 0
+
+<Icon@AnchorLayout>:
+    size_hint: None, None
+    size: dp(104), dp(104)
+
+    canvas.before:
+        Color:
+            rgba: white
+        SmoothEllipse:
+            pos: self.pos
+            size: self.size
+
+    Image:
+        size_hint: None, None
+        size: dp(35), dp(40)
+        source: 'delivery_app/assets/images/cube.png'
