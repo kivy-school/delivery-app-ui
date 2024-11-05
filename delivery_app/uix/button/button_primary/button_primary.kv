@@ -1,0 +1,20 @@
+<-ButtonPrimary>:
+    size_hint: 1, None
+    height: dp(56)
+
+    canvas:
+        # Background color instruction
+        Color:
+            rgba: root.bg_color if self.state == 'normal' else self.bg_color_down
+        SmoothRoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: root.radius
+            
+        # Text instruction
+        Color:
+            rgba: root.color
+        Rectangle:
+            texture: self.texture
+            size: self.texture_size
+            pos: int(self.center_x - self.texture_size[0] / 2.), int(self.center_y - self.texture_size[1] / 2.)
