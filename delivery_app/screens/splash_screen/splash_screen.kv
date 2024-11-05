@@ -1,0 +1,45 @@
+#:import Backdrop delivery_app.uix.backdrop.Backdrop
+
+<SplashScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        
+        canvas.before:
+            Color:
+                rgba: rgba("#A259FF")
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+            Color:
+                rgba: white
+            Rectangle:
+                pos: self.pos[0], self.pos[1] + dp(172)
+                size: dp(414), dp(725)
+                source: 'delivery_app/assets/images/background.png'
+
+        BoxLayout:
+            padding: dp(20), dp(64), 0, 0
+            size_hint: None, None
+            size: self.minimum_size
+            Logo:
+
+        Widget:
+        
+        Backdrop:
+
+<Logo@AnchorLayout>:
+    size_hint: None, None
+    size: dp(64), dp(64)
+    
+    canvas.before:
+        Color:
+            rgba: rgba("#CDFFB6")
+        SmoothEllipse:  
+            pos: self.pos
+            size: self.size
+
+    Image:
+        source: 'delivery_app/assets/images/logo.png'
+        size_hint: None, None
+        size: dp(24), dp(26)
