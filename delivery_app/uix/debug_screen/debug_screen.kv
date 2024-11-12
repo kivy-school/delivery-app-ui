@@ -1,0 +1,20 @@
+<DebugScreen>:
+    on_touch_down: root.transparent = not root.transparent
+    on_touch_move: root.source_opacity = args[1].x / root.width
+
+    canvas.after:
+        Color:
+            rgba: (1,1,1, root.source_opacity) if (not root.transparent and root.debug) else (0, 0, 0, 0)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: root.source
+        Color:
+            rgba: (1,0,0, root.source_opacity) if (not root.transparent and root.debug) else (0, 0, 0, 0)
+        
+        # horizontal line
+        Line:
+            points: root.x, root.height/2, root.right, root.height/2
+        # vertical line
+        Line:
+            points: root.width / 2, root.y, root.width / 2, root.top
